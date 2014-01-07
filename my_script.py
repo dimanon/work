@@ -1,11 +1,12 @@
 __author__ = 'dima'
 
+
 def tir(mega_ball, dropd):
     mega_ball = {number: number == mega_ball for number in range(10)}
     balls = {number: number in dropd for number in range(1, 43)}
     return mega_ball, balls
 
-balls = [10,21,24,31,40,42]
+balls = [10, 21, 24, 31, 40, 42]
 mg = 5
 a, b = tir(mg, balls)
 print(a)
