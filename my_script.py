@@ -1,17 +1,20 @@
 __author__ = 'dima'
 
+import sys
+
 
 def tir(mega_ball, dropd):
-    mega_ball = {number: number == mega_ball for number in range(10)}
-    balls = {number: number in dropd for number in range(1, 43)}
-    return mega_ball, balls
+    out_mega_ball = {number: number == mega_ball for number in range(10)}
+    out_balls = {number: number in dropd for number in range(1, 43)}
+    return out_mega_ball, out_balls
 
-balls = [10, 21, 24, 31, 40, 42]
-mg = 5
-a, b = tir(mg, balls)
-print(a)
-print(b)
-exit = ''
-while exit != 'exit':
-    mg = int(input("Input megaball: "))
-    balls = [int(ball) for ball in input("Input balls , :").split(',')]
+
+def main(in_balls):
+    mg = int(in_balls[0])
+    balls = [int(x) for x in in_balls[1:]]
+    a, b = tir(mg, balls)
+    print(a)
+    print(b)
+
+if __name__ == '__main__' and len(sys.argv) > 1:
+    main(sys.argv[1:])
