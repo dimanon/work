@@ -10,11 +10,7 @@ def tir(mega_ball, dropd):
 
 
 def main(in_balls):
-    mg = int(in_balls[0])
-    balls = [int(x) for x in in_balls[1:]]
-    a, b = tir(mg, balls)
-    print(a)
-    print(b)
+    print(tir(int(in_balls[0]), [int(x) for x in in_balls[1:]]))
 
 if __name__ == '__main__' and len(sys.argv) > 1:
     main(sys.argv[1:])
